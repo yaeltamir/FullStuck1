@@ -1,4 +1,268 @@
 <!DOCTYPE html>
-<html>
-    <grid></grid>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeKeys | Apartment listings</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <!-- Header: logo + main navigation (copy from index, with aria-current on Listings) -->
+  <header class="site-header">
+    <a class="logo" href="/index.html" aria-label="LuxeKeys Home">
+      <img src="/assets/img/logo.jpg" alt="LuxeKeys logo">
+    </a>
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <nav aria-label="Main navigation" class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/listings.html" aria-current="page">Listings</a>
+      <a href="/pages/neighborhoods.html">Neighborhoods</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main content: listings page -->
+  <main id="content">
+    <header class="page-header">
+      <h1>Apartment listings</h1>
+      <p>Browse all available rentals with LuxeKeys and filter by city, price and rooms.</p>
+    </header>
+
+    <!-- Sub navigation: category anchors inside this page -->
+    <nav aria-label="Listing categories" class="category-nav">
+      <a href="#center">City center</a>
+      <a href="#north">North area</a>
+      <a href="#south">South & nearby cities</a>
+    </nav>
+
+    <!-- Filter form (second form in project) -->
+    <section class="filters" aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter apartments</h2>
+
+      <form action="/listings.html" method="get" class="filter-form">
+        <div class="field">
+          <label for="filter-city">City</label>
+          <input id="filter-city" name="city" type="text" placeholder="Tel Aviv, Ramat Gan…">
+        </div>
+
+        <div class="field">
+          <label for="filter-rooms">Rooms</label>
+          <select id="filter-rooms" name="rooms">
+            <option value="">Any</option>
+            <option value="1">Studio / 1.5</option>
+            <option value="2">2 rooms</option>
+            <option value="3">3 rooms</option>
+            <option value="4">4+ rooms</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="filter-min">Min price (₪)</label>
+          <input id="filter-min" name="min" type="number" min="0" step="100">
+        </div>
+
+        <div class="field">
+          <label for="filter-max">Max price (₪)</label>
+          <input id="filter-max" name="max" type="number" min="0" step="100">
+        </div>
+
+        <div class="field">
+          <label for="filter-tag">Tag</label>
+          <select id="filter-tag" name="tag">
+            <option value="">Any</option>
+            <option value="balcony">With balcony</option>
+            <option value="parking">With parking</option>
+            <option value="pets">Pets allowed</option>
+          </select>
+        </div>
+
+        <button type="submit">Apply filters</button>
+      </form>
+    </section>
+
+    <!-- Center area listings -->
+    <section id="center" class="listing-section" aria-labelledby="center-heading">
+      <h2 id="center-heading">City center</h2>
+      <p>Busy streets, cafés, and walking distance to everything.</p>
+
+      <div class="cards">
+        <!-- Card 1 (same as featured on home) -->
+        <article class="card" data-tag="balcony parking">
+          <figure>
+            <img src="/assets/img/listings/apt1.jpg"
+                 alt="Bright living room at Shenkin 12, Tel Aviv">
+            <figcaption>Shenkin 12 • Tel Aviv</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">3-room apartment on Shenkin 12</a>
+          </h3>
+          <p>72 m² • 3 rooms • Balcony • 2nd floor with elevator</p>
+          <ul>
+            <li>Monthly rent: ₪7,400</li>
+            <li>Available: Immediate</li>
+            <li>Parking: Included</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-tag="pets">
+          <figure>
+            <img src="/assets/img/listings/apt10.jpg"
+                 alt="Cozy studio apartment near Dizengoff Square">
+            <figcaption>Dizengoff 88 • Tel Aviv</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">Studio near Dizengoff Square</a>
+          </h3>
+          <p>1.5 rooms • Ideal for students • Close to public transport</p>
+          <ul>
+            <li>Monthly rent: ₪4,200</li>
+            <li>Available: From next month</li>
+            <li>Pets: Allowed</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-tag="balcony">
+          <figure>
+            <img src="/assets/img/listings/apt19.jpg"
+                 alt="Modern apartment on King George Street">
+            <figcaption>King George 15 • Tel Aviv</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">Modern 2-room near King George</a>
+          </h3>
+          <p>2 rooms • 58 m² • Small balcony • 4th floor with elevator</p>
+          <ul>
+            <li>Monthly rent: ₪6,100</li>
+            <li>Available: In 3 weeks</li>
+            <li>Furnished: Partially</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- North area listings -->
+    <section id="north" class="listing-section" aria-labelledby="north-heading">
+      <h2 id="north-heading">North area</h2>
+      <p>Quieter streets, parks, families and green spaces.</p>
+
+      <div class="cards">
+        <!-- Card 4 -->
+        <article class="card" data-tag="parking balcony">
+          <figure>
+            <img src="/assets/img/listings/apt8.jpg"
+                 alt="Spacious apartment in Ramat Aviv">
+            <figcaption>Ramat Aviv 3 • Tel Aviv</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">Family 4-room in Ramat Aviv</a>
+          </h3>
+          <p>4 rooms • 100 m² • Big balcony • Near university</p>
+          <ul>
+            <li>Monthly rent: ₪10,500</li>
+            <li>Available: In 1 month</li>
+            <li>Parking: Underground</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card" data-tag="parking">
+          <figure>
+            <img src="/assets/img/listings/apt7.jpg"
+                 alt="Family apartment in a quiet street in Ramat Gan">
+            <figcaption>HaPalmach 25 • Ramat Gan</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">Family apartment in a quiet street</a>
+          </h3>
+          <p>4 rooms • 95 m² • Close to park and schools</p>
+          <ul>
+            <li>Monthly rent: ₪8,900</li>
+            <li>Available: In 2 months</li>
+            <li>Elevator & storage room</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- South & nearby cities listings -->
+    <section id="south" class="listing-section" aria-labelledby="south-heading">
+      <h2 id="south-heading">South & nearby cities</h2>
+      <p>More space, better prices, and easy commute options.</p>
+
+      <div class="cards">
+        <!-- Card 6 -->
+        <article class="card" data-tag="pets">
+          <figure>
+            <img src="/assets/img/listings/apt5.jpg"
+                 alt="Apartment in Holon near park">
+            <figcaption>HaDekel 7 • Holon</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">3-room near Holon park</a>
+          </h3>
+          <p>3 rooms • 80 m² • Short walk to large park</p>
+          <ul>
+            <li>Monthly rent: ₪6,300</li>
+            <li>Available: Immediate</li>
+            <li>Pets: Allowed</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card" data-tag="balcony">
+          <figure>
+            <img src="/assets/img/listings/apt4.jpg"
+                 alt="Sea-view balcony apartment in Bat Yam">
+            <figcaption>Ben Gurion 19 • Bat Yam</figcaption>
+          </figure>
+          <h3>
+            <a href="/pages/apt.html">Sea-view apartment in Bat Yam</a>
+          </h3>
+          <p>3.5 rooms • Balcony with sea view • Close to promenade</p>
+          <ul>
+            <li>Monthly rent: ₪7,800</li>
+            <li>Available: In 1 month</li>
+            <li>Parking: Street</li>
+          </ul>
+          <a class="more-link" href="/pages/apt.html">View details</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Aside: tips or extra info -->
+  <aside class="site-aside" aria-label="Search tips">
+    <h2>Search tips</h2>
+    <ul>
+      <li>Start with city center if you want walking distance to work or campus.</li>
+      <li>Check north area for family-friendly neighborhoods and parks.</li>
+      <li>Look at south & nearby cities for better prices and more space.</li>
+    </ul>
+  </aside>
+
+  <!-- Footer: same structure as index.html -->
+  <footer class="site-footer">
+    <nav aria-label="Footer navigation">
+      <a href="/pages/about.html#terms">Terms of use</a>
+      <a href="/pages/about.html#privacy">Privacy policy</a>
+      <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+      <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">Tel Aviv Municipality</a>
+      <a href="https://www.rail.co.il" target="_blank" rel="noopener">Israel Railways</a>
+    </nav>
+    <p>
+      <small>© 2025 LuxeKeys. Static demo site for Full-Stack Web Development course.</small>
+    </p>
+  </footer>
+</body>
 </html>
