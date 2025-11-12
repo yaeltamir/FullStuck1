@@ -1,5 +1,5 @@
 /*
- * LuxeKeys — Luxury Stylesheet (v3.6) - Final Hero Layout & Blur Adjustments
+ * LuxeKeys — Luxury Stylesheet (v5.2) - Larger Envelope, Closer to Text
  * Theme: Champagne Gold & Pearl Beige
  * -----------------------------------------------------
  * Base Font: Manrope | Heading Font: Playfair Display
@@ -36,7 +36,7 @@
 }
 
 /* Load Fonts - Required for the desired style */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
 
 /* =========================
    2) CSS Reset & Global
@@ -193,19 +193,7 @@ section {
    4) Hero & Quick Search (INDEX.HTML)
    ========================= */
 .hero {
-    padding: clamp(2rem, 3vw + 1rem, 3rem) 0;
-}
-.hero h1 { 
-    font-size: clamp(2.5rem, 5vw, 3.8rem); 
-    color: var(--charcoal); 
-    margin: 0 0 .5rem; 
-    font-family: var(--ff-heading); 
-    font-weight: 900;
-}
-.hero p {
-    font-size: var(--fs-500);
-    max-width: 70ch;
-    color: var(--charcoal);
+    padding: 0;
 }
 
 /* NEW: Full width hero with background image */
@@ -214,7 +202,6 @@ section {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding: 3rem 1rem 1rem 1rem;
-    /* UPDATED IMAGE URL */
     background-image: url("/assets/img/i2.html.jpg");
     background-size: cover;
     background-position: center 30%;
@@ -323,14 +310,32 @@ section {
     font-size: var(--fs-400);
     color: var(--charcoal);
 }
-.quick-search input, .quick-search select {
+/* Unified Input/Select/Textarea Styling */
+.quick-search input, 
+.quick-search select,
+.filter-form input,
+.filter-form select,
+.filter-form textarea,
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
     padding: .8rem 1rem; 
     border: 1px solid var(--line-dark);
     border-radius: var(--radius-sm); 
     font: inherit; 
-    background: var(--background);
+    background: var(--background); /* Light background for fields */
+    color: var(--charcoal);
+    /* NEW: BOLD FONT for fields in filter forms (Listings) */
+    font-weight: 600; 
+}
+/* Unified Label Styling for all forms */
+.filter-form label,
+form label {
+    font-weight: 600; /* BOLD FONT */
+    font-size: var(--fs-400);
     color: var(--charcoal);
 }
+
 .quick-search button {
     justify-self: stretch;
     padding: 1rem 1.5rem; 
@@ -484,6 +489,7 @@ section {
     color: var(--primary-text);
 }
 
+/* Filter Form specific styles */
 .filter-form { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -495,6 +501,11 @@ section {
     box-shadow: var(--shadow-sm); 
     margin-bottom: 2rem;
 }
+/* Apply Filter form heading font */
+.filters h2 {
+    font-family: var(--ff-heading);
+}
+
 .filter-form button {
     grid-column: 1 / -1;
 }
@@ -671,17 +682,35 @@ textarea {
     flex-wrap: wrap;
     margin-top: 1rem;
 }
-.submit-btn { 
-    background: var(--primary); 
-    color: var(--primary-text); 
-    font-weight: 700; 
+/* Unified Primary Button Style for ALL forms/CTAs */
+button:not(.reset-btn), .cta-button, .submit-btn {
     padding: 1rem 1.5rem; 
     border-radius: var(--radius-sm); 
     border: none;
-    box-shadow: var(--shadow-md);
+    background: var(--primary); 
+    color: var(--primary-text);
+    font-weight: 700; 
     cursor: pointer;
-    transition: filter 0.2s ease;
+    box-shadow: var(--shadow-md);
+    transition: filter 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    text-decoration: none !important;
+    display: block;
+    /* FIX: Remove width: 100% so it fits content size (for CONTACT.HTML Send button) */
+    width: auto;
 }
+button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* FIX: Override the width: auto to width: 100% specifically for the quick search button */
+.quick-search button {
+    align-self: end;
+    width: 100%; 
+}
+
+/* Reset button styling */
 .reset-btn {
     background: var(--line);
     color: var(--charcoal);
@@ -691,6 +720,8 @@ textarea {
     border: 1px solid var(--line-dark);
     box-shadow: var(--shadow-sm);
     cursor: pointer;
+    /* FIX: Allow reset button to fit content size in CONTACT.HTML */
+    width: auto; 
 }
 .reset-btn:hover {
     background: var(--line-dark);
@@ -759,21 +790,45 @@ textarea {
     .form-row {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* FILTER FORM - 3 columns for all fields + button */
     .filter-form {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-    }
-    .filter-form button {
-        grid-column: auto;
-        align-self: end;
-    }
-    /* Quick search: 5 columns */
-    .quick-search {
-        grid-template-columns: repeat(5, 1fr);
+        gap: 1.25rem;
+        /* Re-aligning items to bottom for aesthetic consistency across all devices */
         align-items: end;
     }
-    .quick-search h2 {
-        grid-column: 1/-1;
+    /* FIX: Ensure the button takes its own column, aligns to the bottom, and is primary gold */
+    .filter-form button {
+        grid-column: span 1;
+        align-self: end;
+        /* Width is auto by default, but we stretch it to fill the grid column */
+        width: 100%;
     }
+    /* FIX: Filter fields should take up one column each */
+    .filter-form .field {
+        grid-column: span 1;
+    }
+    
+    /* Quick search: 5 columns in a single row */
+    .quick-search {
+        grid-template-columns: repeat(5, 1fr);
+        align-items: end; /* Align items to the bottom */
+    }
+    .quick-search h2 {
+        grid-column: 1/-1; /* Header spans all 5 columns */
+    }
+    .quick-search .field, .quick-search button {
+        /* Each field and the button take exactly one column */
+        grid-column: span 1;
+    }
+    /* Ensure the button is properly placed on the fifth column */
+    .quick-search button {
+        /* Override mobile full-width stretch to fit into one column */
+        justify-self: stretch;
+    }
+    
     /* Featured Listings: 2 columns */
     .cards {
         grid-template-columns: repeat(2, minmax(0,1fr));
@@ -788,10 +843,6 @@ textarea {
     }
     .layout {
         grid-template-columns: 1fr;
-    }
-    /* Quick search button should span only one column if content allows */
-    .quick-search button {
-        justify-self: stretch;
     }
 }
 
@@ -829,8 +880,7 @@ textarea {
         margin-left: 0;
         margin-right: 0;
     }
-    /* Position the Aside *after* the main content sections if it's placed after <main> in the HTML structure
-       --- NOTE: The HTML places <aside> *after* <main> but *before* <footer>. --- */
+    /* Position the Aside *after* the main content sections if it's placed after <main> but *before* <footer> */
     .site-aside { 
         width: min(1200px, 92vw);
         margin: 2rem auto 1.5rem; 
@@ -842,10 +892,45 @@ textarea {
 }
 
 /* =========================
-   12) Print basics
+   12) Thank You Page Animation
+   ========================= */
+
+/* Keyframes for the 'sent' animation (Slower & Higher) */
+@keyframes flyOut {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px) translateX(150px) scale(0.5) rotate(15deg); /* Y value increased */
+        opacity: 0;
+    }
+}
+
+/* Wrapper to position the animation */
+.animation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Space for the icon above the text */
+    margin-top: 2rem;
+    margin-bottom: 0.25rem; /* DECREASED margin-bottom to bring closer to text */
+}
+
+/* Styling and triggering the animation */
+.envelope-icon {
+    font-size: 15rem; /* INCREASED SIZE */
+    line-height: 1;
+    color: var(--primary); /* Use primary color for the icon */
+    /* Start the animation immediately upon load */
+    animation: flyOut 4s ease-in-out forwards; /* INCREASED DURATION */
+}
+
+/* =========================
+   13) Print basics
    ========================= */
 @media print {
-    .site-header, .site-footer, .skip-link, .category-nav, .site-aside {
+    .site-header, .site-footer, .skip-link, .category-nav, .site-aside, .animation-wrapper {
         display: none !important;
     }
     body {

@@ -56,6 +56,16 @@
         </div>
 
         <div class="field">
+          <label for="filter-tag">Tag</label>
+          <select id="filter-tag" name="tag">
+            <option value="">Any</option>
+            <option value="balcony">With balcony</option>
+            <option value="parking">With parking</option>
+            <option value="pets">Pets allowed</option>
+          </select>
+        </div>
+
+        <div class="field">
           <label for="filter-min">Min price (₪)</label>
           <input id="filter-min" name="min" type="number" min="0" step="100">
         </div>
@@ -65,15 +75,7 @@
           <input id="filter-max" name="max" type="number" min="0" step="100">
         </div>
 
-        <div class="field">
-          <label for="filter-tag">Tag</label>
-          <select id="filter-tag" name="tag">
-            <option value="">Any</option>
-            <option value="balcony">With balcony</option>
-            <option value="parking">With parking</option>
-            <option value="pets">Pets allowed</option>
-          </select>
-        </div>
+       
 
         <button type="submit">Apply filters</button>
       </form>
