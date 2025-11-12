@@ -4,40 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LuxeKeys | Find your next apartment</title>
-  <!-- CSS יתחבר אחר כך -->
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <!-- כותרת עליונה + לוגו + ניווט -->
   <header class="site-header">
-    <a class="logo" href="/index.html" aria-label="LuxeKeys  Home">
-      <img src="/assets/img/logo.jpg" alt="LuxeKeys  logo">
+    <a class="logo" href="/index.html" aria-label="LuxeKeys Home">
+      <img src="/assets/img/logo3.jpg" alt="LuxeKeys logo">
     </a>
 
-    <!-- קישור דילוג לתוכן (נגישות) -->
     <a class="skip-link" href="#content">Skip to content</a>
 
-    <!-- ניווט ראשי של האתר -->
     <nav aria-label="Main navigation" class="main-nav">
       <a href="/index.html" aria-current="page">Home</a>
       <a href="/listings.html">Listings</a>
       <a href="/pages/neighborhoods.html">Neighborhoods</a>
-      <a href="/pages/about-us.html">About-Us</a>
+      <a href="/pages/about.html">About</a>
       <a href="/pages/contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- התוכן המרכזי של הדף -->
-  <main id="content">
-    <!-- אזור פתיחה (Hero) -->
+  <main id="content" class="with-aside">
     <section class="hero">
-      <h1>Find your next home with LuxeKeys </h1>
+      <h1>Find your next home with LuxeKeys</h1>
       <p>
         Smart, simple apartment search for students, families and young professionals.
         <span>Real listings, clear details, easy contact.</span>
       </p>
 
-      <!-- טופס חיפוש מהיר (Form ראשון) -->
       <form action="/listings.html" method="get" class="quick-search">
         <h2>Quick search</h2>
 
@@ -70,76 +63,61 @@
       </form>
     </section>
 
-    <!-- רשימת דירות מומלצות (Featured listings) -->
     <section class="featured-listings" aria-labelledby="featured-heading">
       <h2 id="featured-heading">Featured listings</h2>
       <p>Hand-picked apartments currently available for rent.</p>
 
-      <!-- כאן נשתמש ב־Grid ב-CSS, כרגע רק div כקונטיינר -->
       <div class="cards">
-        <!-- כרטיס דירה 1 -->
         <article class="card">
           <figure>
-            <img src="/assets/img/listings/apt1.jpg"
-                 alt="Bright living room at Shenkin 12, Tel Aviv">
+            <img src="/assets/img/listings/apt1.jpeg" alt="Bright living room at Shenkin 12, Tel Aviv">
             <figcaption>Shenkin 12 • Tel Aviv</figcaption>
           </figure>
-          <h3>
-            <a href="/pages/apt.html">3-room apartment on Shenkin 12</a>
-          </h3>
+          <h3><a href="/pages/apt/shenkin-12.html">3-room apartment on Shenkin 12</a></h3>
           <p>72 m² • Balcony • 2nd floor with elevator</p>
           <ul>
             <li>Monthly rent: ₪7,400</li>
             <li>Available: Immediate</li>
             <li>Parking: Included</li>
           </ul>
-          <a class="more-link" href="/pages/apt.html">View details</a>
+          <a class="more-link" href="/pages/apt/shenkin-12.html">View details</a>
         </article>
 
-        <!-- כרטיס דירה 2 -->
         <article class="card">
           <figure>
-            <img src="/assets/img/listings/apt2.png"
-                 alt="Cozy studio near Dizengoff, Tel Aviv">
+            <img src="/assets/img/listings/apt2.png" alt="Cozy studio near Dizengoff, Tel Aviv">
             <figcaption>Dizengoff 88 • Tel Aviv</figcaption>
           </figure>
-          <h3>
-            <a href="/pages/apt.html">Studio near Dizengoff Square</a>
-          </h3>
+          <h3><a href="/pages/apt/dizengoff-88.html">Studio near Dizengoff Square</a></h3>
           <p>1.5 rooms • Perfect for students • Close to public transport</p>
           <ul>
             <li>Monthly rent: ₪4,200</li>
             <li>Available: From next month</li>
             <li>Pets: Allowed</li>
           </ul>
-          <a class="more-link" href="/pages/apt.html">View details</a>
+          <a class="more-link" href="/pages/apt/dizengoff-88.html">View details</a>
         </article>
 
-        <!-- כרטיס דירה 3 -->
         <article class="card">
           <figure>
-            <img src="/assets/img/listings/apt3.jpg"
-                 alt="Family apartment in quiet street, Ramat Gan">
+            <img src="/assets/img/listings/apt3.jpg" alt="Family apartment in quiet street, Ramat Gan">
             <figcaption>HaPalmach 25 • Ramat Gan</figcaption>
           </figure>
-          <h3>
-            <a href="/pages/apt.html">Family apartment in a quiet street</a>
-          </h3>
+          <h3><a href="/pages/apt/hapalmach-25.html">Family apartment in a quiet street</a></h3>
           <p>4 rooms • 95 m² • Close to park and schools</p>
           <ul>
             <li>Monthly rent: ₪8,900</li>
             <li>Available: In 2 months</li>
             <li>Elevator & storage room</li>
           </ul>
-          <a class="more-link" href="/pages/apt.html">View details</a>
+          <a class="more-link" href="/pages/apt/hapalmach-25.html">View details</a>
         </article>
       </div>
     </section>
   </main>
 
-  <!-- אזור צדדי (aside) – מידע משלים, לא התוכן המרכזי -->
-  <aside class="site-aside" aria-label="Why LuxeKeys ">
-    <h2>Why choose LuxeKeys ?</h2>
+  <aside class="site-aside" aria-label="Why LuxeKeys">
+    <h2>Why choose LuxeKeys?</h2>
     <ul>
       <li>Clear, transparent apartment details</li>
       <li>Focus on student-friendly and family-friendly areas</li>
@@ -147,27 +125,15 @@
     </ul>
   </aside>
 
-  <!-- כותרת תחתונה עם קישורים פנימיים וחיצוניים -->
   <footer class="site-footer">
     <nav aria-label="Footer navigation">
-      <!-- קישורים פנימיים לעוגנים שניצור ב-about.html -->
-      <a href="/pages/about-us.html#terms">Terms of use</a>
-      <a href="/pages/about-us.html#privacy">Privacy policy</a>
-
-      <!-- קישורים חיצוניים (נדרשים לפחות 3 כאלה בפרויקט) -->
-      <a href="https://maps.google.com" target="_blank" rel="noopener">
-        Google Maps
-      </a>
-      <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">
-        Tel Aviv Municipality
-      </a>
-      <a href="https://www.rail.co.il" target="_blank" rel="noopener">
-        Israel Railways
-      </a>
+      <a href="/pages/about.html#terms">Terms of use</a>
+      <a href="/pages/about.html#privacy">Privacy policy</a>
+      <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+      <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">Tel Aviv Municipality</a>
+      <a href="https://www.rail.co.il" target="_blank" rel="noopener">Israel Railways</a>
     </nav>
-    <p>
-      <small>© 2025 LuxeKeys . Static demo site for Full-Stack Web Development course.</small>
-    </p>
+    <p><small>© 2025 LuxeKeys. Static demo site for Full-Stack Web Development course.</small></p>
   </footer>
 </body>
 </html>

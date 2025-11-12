@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeKeys | Shenkin 12, Tel Aviv</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/index.html" aria-label="LuxeKeys Home">
+      <img src="/assets/img/logo.jpg" alt="LuxeKeys logo">
+    </a>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <nav aria-label="Main navigation" class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/listings.html" aria-current="page">Listings</a>
+      <a href="/pages/neighborhoods.html">Neighborhoods</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumbs" class="breadcrumbs">
+    <a href="/index.html">Home</a> ›
+    <a href="/listings.html">Listings</a> ›
+    <span aria-current="page">Shenkin 12</span>
+  </nav>
+
+  <main id="content" class="layout">
+    <article>
+      <header class="page-header">
+        <h1>Shenkin 12, Tel Aviv</h1>
+        <p>3-room apartment with balcony in the heart of Tel Aviv.</p>
+      </header>
+
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <figure>
+            <img src="/assets/img/apartments/shenkin-12-living.jpg" alt="Living room with balcony door">
+            <figcaption>Bright living room with balcony access</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/apartments/shenkin-12-kitchen.jpg" alt="Modern white kitchen">
+            <figcaption>Modern kitchen</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/apartments/shenkin-12-bedroom.jpg" alt="Cozy main bedroom">
+            <figcaption>Main bedroom</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="specs">
+        <h2>Apartment details</h2>
+        <table aria-label="Apartment specifications">
+          <tbody>
+            <tr><th scope="row">City</th><td>Tel Aviv</td></tr>
+            <tr><th scope="row">Address</th><td>Shenkin 12</td></tr>
+            <tr><th scope="row">Rooms</th><td>3</td></tr>
+            <tr><th scope="row">Size</th><td>72 m²</td></tr>
+            <tr><th scope="row">Floor</th><td>2 of 5 (with elevator)</td></tr>
+            <tr><th scope="row">Balcony</th><td>Yes, 8 m²</td></tr>
+            <tr><th scope="row">Parking</th><td>Private parking</td></tr>
+            <tr><th scope="row">Monthly rent</th><td>₪7,400</td></tr>
+            <tr><th scope="row">Available from</th><td>Immediate</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="tour">
+        <h2>Video tour</h2>
+        <video controls width="640">
+          <source src="/assets/media/tours/shenkin-12-tour.mp4" type="video/mp4">
+        </video>
+      </section>
+
+      <section id="map">
+        <h2>Location</h2>
+        <iframe
+          title="Map of Shenkin 12, Tel Aviv"
+          src="https://www.google.com/maps/embed?pb=..."
+          width="600" height="450" style="border:0;" loading="lazy">
+        </iframe>
+      </section>
+
+      <section id="plan">
+        <h2>Floor plan</h2>
+        <embed src="/assets/media/docs/shenkin-12-floorplan.pdf" type="application/pdf" width="100%" height="500">
+      </section>
+
+      <section id="visit">
+        <h2>Request a visit</h2>
+        <form action="/pages/thank-you.html" method="get" class="visit-form">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required>
+          </div>
+          <div class="field">
+            <label for="date">Preferred visit date</label>
+            <input id="date" name="date" type="date">
+          </div>
+          <div class="field">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit">Send request</button>
+        </form>
+      </section>
+
+      <p class="back-link"><a href="/listings.html#center">← Back to city center listings</a></p>
+    </article>
+
+    <aside class="similar" aria-label="Similar listings">
+      <h2>Similar listings</h2>
+      <ul>
+        <li><a href="/listings.html#center">More in city center</a></li>
+        <li><a href="/listings.html#north">Family areas</a></li>
+        <li><a href="/listings.html#south">Better prices</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Footer navigation">
+      <a href="/pages/about.html#terms">Terms of use</a>
+      <a href="/pages/about.html#privacy">Privacy policy</a>
+      <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+      <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">Tel Aviv Municipality</a>
+      <a href="https://www.rail.co.il" target="_blank" rel="noopener">Israel Railways</a>
+    </nav>
+    <p><small>© 2025 LuxeKeys.</small></p>
+  </footer>
+</body>
+</html>
