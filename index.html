@@ -1,139 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LuxeKeys | Find your next apartment</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeKeys | Find your next apartment</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="/index.html" aria-label="LuxeKeys Home">
-      <img src="/assets/img/logo3.jpg" alt="LuxeKeys logo">
-    </a>
+    <header class="site-header">
+        <a class="logo" href="/index.html" aria-label="LuxeKeys Home">
+            <!-- image source updated for consistency -->
+            <img src="/assets/img/logo.jpg" alt="LuxeKeys logo"> 
+        </a>
 
-    <a class="skip-link" href="#content">Skip to content</a>
+        <a class="skip-link" href="#content">Skip to content</a>
 
-    <nav aria-label="Main navigation" class="main-nav">
-      <a href="/index.html" aria-current="page">Home</a>
-      <a href="/listings.html">Listings</a>
-      <a href="/pages/neighborhoods.html">Neighborhoods</a>
-      <a href="/pages/about.html">About</a>
-      <a href="/pages/contact.html">Contact</a>
-    </nav>
-  </header>
+        <nav aria-label="Main navigation" class="main-nav">
+            <a href="/index.html" aria-current="page">Home</a>
+            <a href="/listings.html">Listings</a>
+            <a href="/pages/neighborhoods.html">Neighborhoods</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <main id="content" class="with-aside">
-    <section class="hero">
-      <h1>Find your next home with LuxeKeys</h1>
-      <p>
-        Smart, simple apartment search for students, families and young professionals.
-        <span>Real listings, clear details, easy contact.</span>
-      </p>
+    <main id="content" class="with-aside">
+        <!-- HERO SECTION: Now includes the hero-with-bg class for the full background image -->
+        <section class="hero hero-with-bg">
+            <!-- Container for the text content (top area of the hero) -->
+            <div class="hero-content"> 
+                <h1>LuxeKeys</h1>
+                <h2>Find your next home</h2>
+                <p>
+                  Smart, simple apartment search for students, families and young professionals.
+                  <span>Real listings, clear details, easy contact.</span>
+                </p>
+            </div>
+            
+            <!-- Container for the Quick Search form (bottom area of the hero) -->
+            <div class="quick-search-container">
+                <form action="/listings.html" method="get" class="quick-search">    
+                    <div class="field">
+                        <label for="city">City</label>
+                        <input id="city" name="city" type="text" placeholder="Tel Aviv, Jerusalem…">
+                    </div>
+    
+                    <div class="field">
+                        <label for="min-price">Min price (₪)</label>
+                        <input id="min-price" name="min" type="number" min="0" step="100">
+                    </div>
+    
+                    <div class="field">
+                        <label for="max-price">Max price (₪)</label>
+                        <input id="max-price" name="max" type="number" min="0" step="100">
+                    </div>
+    
+                    <div class="field">
+                        <label for="rooms">Rooms</label>
+                        <select id="rooms" name="rooms">
+                            <option value="">Any</option>
+                            <option value="2">2 rooms</option>
+                            <option value="3">3 rooms</option>
+                            <option value="4">4+ rooms</option>
+                        </select>
+                    </div>
+    
+                    <button type="submit">Search apartments</button>
+                </form>
+            </div>
+        </section>
 
-      <form action="/listings.html" method="get" class="quick-search">
-        <h2>Quick search</h2>
+        <section class="featured-listings" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Hot-Offers</h2>
+            <p>Hand-picked apartments currently available for rent.</p>
 
-        <div class="field">
-          <label for="city">City</label>
-          <input id="city" name="city" type="text" placeholder="Tel Aviv, Jerusalem…">
-        </div>
+            <div class="cards">
+                <article class="card">
+                    <figure>
+                        <img src="/assets/img/listings/apt1.jpeg" alt="Bright living room at Shenkin 12, Tel Aviv">
+                        <figcaption>Shenkin 12 • Tel Aviv</figcaption>
+                    </figure>
+                    <h3><a href="/pages/apt/shenkin-12.html">3-room apartment on Shenkin 12</a></h3>
+                    <p>72 m² • Balcony • 2nd floor with elevator</p>
+                    <ul>
+                        <li>Monthly rent: ₪7,400</li>
+                        <li>Available: Immediate</li>
+                        <li>Parking: Included</li>
+                    </ul>
+                    <a class="more-link" href="/pages/apt/shenkin-12.html">View details</a>
+                </article>
 
-        <div class="field">
-          <label for="min-price">Min price (₪)</label>
-          <input id="min-price" name="min" type="number" min="0" step="100">
-        </div>
+                <article class="card">
+                    <figure>
+                        <img src="/assets/img/listings/apt2.png" alt="Cozy studio near Dizengoff, Tel Aviv">
+                        <figcaption>Dizengoff 88 • Tel Aviv</figcaption>
+                    </figure>
+                    <h3><a href="/pages/apt/dizengoff-88.html">Studio near Dizengoff Square</a></h3>
+                    <p>1.5 rooms • Perfect for students • Close to public transport</p>
+                    <ul>
+                        <li>Monthly rent: ₪4,200</li>
+                        <li>Available: From next month</li>
+                        <li>Pets: Allowed</li>
+                    </ul>
+                    <a class="more-link" href="/pages/apt/dizengoff-88.html">View details</a>
+                </article>
 
-        <div class="field">
-          <label for="max-price">Max price (₪)</label>
-          <input id="max-price" name="max" type="number" min="0" step="100">
-        </div>
+                <article class="card">
+                    <figure>
+                        <img src="/assets/img/listings/apt3.jpg" alt="Family apartment in quiet street, Ramat Gan">
+                        <figcaption>HaPalmach 25 • Ramat Gan</figcaption>
+                    </figure>
+                    <h3><a href="/pages/apt/hapalmach-25.html">Family apartment in a quiet street</a></h3>
+                    <p>4 rooms • 95 m² • Close to park and schools</p>
+                    <ul>
+                        <li>Monthly rent: ₪8,900</li>
+                        <li>Available: In 2 months</li>
+                        <li>Elevator & storage room</li>
+                    </ul>
+                    <a class="more-link" href="/pages/apt/hapalmach-25.html">View details</a>
+                </article>
+            </div>
+        </section>
+    </main>
 
-        <div class="field">
-          <label for="rooms">Rooms</label>
-          <select id="rooms" name="rooms">
-            <option value="">Any</option>
-            <option value="2">2 rooms</option>
-            <option value="3">3 rooms</option>
-            <option value="4">4+ rooms</option>
-          </select>
-        </div>
+    <aside class="site-aside" aria-label="Why LuxeKeys">
+        <h2>Why choose LuxeKeys?</h2>
+        <ul>
+            <li>Clear, transparent apartment details</li>
+            <li>Focus on student-friendly and family-friendly areas</li>
+            <li>Easy contact forms and quick response</li>
+        </ul>
+    </aside>
 
-        <button type="submit">Search apartments</button>
-      </form>
-    </section>
-
-    <section class="featured-listings" aria-labelledby="featured-heading">
-      <h2 id="featured-heading">Featured listings</h2>
-      <p>Hand-picked apartments currently available for rent.</p>
-
-      <div class="cards">
-        <article class="card">
-          <figure>
-            <img src="/assets/img/listings/apt1.jpeg" alt="Bright living room at Shenkin 12, Tel Aviv">
-            <figcaption>Shenkin 12 • Tel Aviv</figcaption>
-          </figure>
-          <h3><a href="/pages/apt/shenkin-12.html">3-room apartment on Shenkin 12</a></h3>
-          <p>72 m² • Balcony • 2nd floor with elevator</p>
-          <ul>
-            <li>Monthly rent: ₪7,400</li>
-            <li>Available: Immediate</li>
-            <li>Parking: Included</li>
-          </ul>
-          <a class="more-link" href="/pages/apt/shenkin-12.html">View details</a>
-        </article>
-
-        <article class="card">
-          <figure>
-            <img src="/assets/img/listings/apt2.png" alt="Cozy studio near Dizengoff, Tel Aviv">
-            <figcaption>Dizengoff 88 • Tel Aviv</figcaption>
-          </figure>
-          <h3><a href="/pages/apt/dizengoff-88.html">Studio near Dizengoff Square</a></h3>
-          <p>1.5 rooms • Perfect for students • Close to public transport</p>
-          <ul>
-            <li>Monthly rent: ₪4,200</li>
-            <li>Available: From next month</li>
-            <li>Pets: Allowed</li>
-          </ul>
-          <a class="more-link" href="/pages/apt/dizengoff-88.html">View details</a>
-        </article>
-
-        <article class="card">
-          <figure>
-            <img src="/assets/img/listings/apt3.jpg" alt="Family apartment in quiet street, Ramat Gan">
-            <figcaption>HaPalmach 25 • Ramat Gan</figcaption>
-          </figure>
-          <h3><a href="/pages/apt/hapalmach-25.html">Family apartment in a quiet street</a></h3>
-          <p>4 rooms • 95 m² • Close to park and schools</p>
-          <ul>
-            <li>Monthly rent: ₪8,900</li>
-            <li>Available: In 2 months</li>
-            <li>Elevator & storage room</li>
-          </ul>
-          <a class="more-link" href="/pages/apt/hapalmach-25.html">View details</a>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <aside class="site-aside" aria-label="Why LuxeKeys">
-    <h2>Why choose LuxeKeys?</h2>
-    <ul>
-      <li>Clear, transparent apartment details</li>
-      <li>Focus on student-friendly and family-friendly areas</li>
-      <li>Easy contact forms and quick response</li>
-    </ul>
-  </aside>
-
-  <footer class="site-footer">
-    <nav aria-label="Footer navigation">
-      <a href="/pages/about.html#terms">Terms of use</a>
-      <a href="/pages/about.html#privacy">Privacy policy</a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
-      <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">Tel Aviv Municipality</a>
-      <a href="https://www.rail.co.il" target="_blank" rel="noopener">Israel Railways</a>
-    </nav>
-    <p><small>© 2025 LuxeKeys. Static demo site for Full-Stack Web Development course.</small></p>
-  </footer>
+    <footer class="site-footer">
+        <nav aria-label="Footer navigation">
+            <a href="/pages/about.html#terms">Terms of use</a>
+            <a href="/pages/about.html#privacy">Privacy policy</a>
+            <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+            <a href="https://www.tel-aviv.gov.il" target="_blank" rel="noopener">Tel Aviv Municipality</a>
+            <a href="https://www.rail.co.il" target="_blank" rel="noopener">Israel Railways</a>
+        </nav>
+        <p><small>© 2025 LuxeKeys. Full-Stack Web Development course.</small></p>
+    </footer>
 </body>
 </html>
