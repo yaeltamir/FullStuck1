@@ -1,11 +1,3 @@
-/*
- * LuxeKeys — Luxury Stylesheet (v5.2) - Larger Envelope, Closer to Text
- * Theme: Champagne Gold & Pearl Beige
- * -----------------------------------------------------
- * Base Font: Manrope | Heading Font: Playfair Display
- * Fully responsive (mobile-first)
-*/
-
 /* =========================
    1) Design Tokens & Fonts (Theme)
    ========================= */
@@ -74,7 +66,6 @@ figure {
     margin: 0;
 }
 
-/* Focus styles */
 :where(a, button, input, select, textarea) {
     outline: none;
 }
@@ -83,7 +74,6 @@ figure {
     border-radius: var(--radius-sm);
 }
 
-/* Links */
 a {
     color: var(--charcoal);
     text-decoration: none;
@@ -94,7 +84,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* Containers & Layouts */
 main, .container, .layout, .with-aside {
     width: min(1200px, 92vw);
     margin-inline: auto;
@@ -102,7 +91,7 @@ main, .container, .layout, .with-aside {
 }
 section {
     margin-block: 2rem;
-} /* Consistent vertical spacing for sections */
+} 
 .page-header {
     margin-block: 1rem 2rem;
 }
@@ -115,7 +104,6 @@ section {
     color: var(--muted);
 }
 
-/* Utilities */
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -196,7 +184,6 @@ section {
     padding: 0;
 }
 
-/* NEW: Full width hero with background image */
 .hero-with-bg {
     min-height: 550px;
     width: 100vw;
@@ -210,12 +197,12 @@ section {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* ALIGNMENT FIX: Space out content */
+    justify-content: space-between;
     align-items: center;
     position: relative;
     overflow: hidden;
 }
-/* Pseudo-element for blurred image and dark overlay */
+
 .hero-with-bg::before {
     content: '';
     position: absolute;
@@ -226,11 +213,11 @@ section {
     background-image: inherit;
     background-size: inherit;
     background-position: inherit;
-    filter: blur(8px); /* INCREASED BLUR */
+    filter: blur(8px); 
     z-index: -1;
     transform: scale(1.02);
 }
-/* Add a dark overlay on top of the blurred image */
+
 .hero-with-bg::after {
     content: '';
     position: absolute;
@@ -242,9 +229,8 @@ section {
     z-index: -1;
 }
 
-/* Container for text content */
 .hero-content {
-    margin-top: 0; /* Align content to the top area */
+    margin-top: 0; 
     padding-top: 1rem;
     position: relative;
     z-index: 1;
@@ -264,18 +250,18 @@ section {
     position: relative;
     z-index: 1;
 }
-/* Quick Search Form Container - Pushed to the bottom */
+
 .quick-search-container {
     width: 100%;
     max-width: 1200px;
-    margin-top: auto; /* Push down to the bottom */
+    margin-top: auto; 
     margin-bottom: 2rem; 
     position: relative;
     z-index: 1;
 }
-/* Quick Search Form - Adjusted for placement within hero */
+
 .quick-search {
-    margin: 1.5rem auto -2rem; /* Center the form within its container */
+    margin: 1.5rem auto -2rem; 
     max-width: 1100px;
     width: 90%;
     background: rgba(255, 255, 255, 0.9);
@@ -295,7 +281,6 @@ section {
     color: var(--charcoal);
 }
 
-/* Quick Search Form - Grid Layout (General styling) */
 .quick-search h2 {
     margin: 0 0 .5rem;
     font-size: var(--fs-700);
@@ -310,7 +295,6 @@ section {
     font-size: var(--fs-400);
     color: var(--charcoal);
 }
-/* Unified Input/Select/Textarea Styling */
 .quick-search input, 
 .quick-search select,
 .filter-form input,
@@ -323,16 +307,15 @@ form textarea {
     border: 1px solid var(--line-dark);
     border-radius: var(--radius-sm); 
     font: inherit; 
-    background: var(--background); /* Light background for fields */
+    background: var(--background);
     color: var(--charcoal);
-    /* NEW: BOLD FONT for fields in filter forms (Listings) */
     font-weight: 600; 
     width: 100%;
 }
-/* Unified Label Styling for all forms */
+
 .filter-form label,
 form label {
-    font-weight: 600; /* BOLD FONT */
+    font-weight: 600; 
     font-size: var(--fs-400);
     color: var(--charcoal);
 }
@@ -407,7 +390,6 @@ form label {
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-/* Hover effect on the image inside the card */
 .card:hover img { 
     transform: scale(1.05); 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); 
@@ -484,7 +466,6 @@ form label {
     color: color-mix(in srgb, var(--primary) 80%, black);
 }
 
-/* LISTINGS.HTML specific styles */
 .category-nav {
     display: flex;
     gap: .75rem;
@@ -505,7 +486,6 @@ form label {
     color: var(--primary-text);
 }
 
-/* Filter Form specific styles */
 .filter-form { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -517,7 +497,7 @@ form label {
     box-shadow: var(--shadow-sm); 
     margin-bottom: 2rem;
 }
-/* Apply Filter form heading font */
+
 .filters h2 {
     font-family: var(--ff-heading);
 }
@@ -538,7 +518,7 @@ form label {
 .site-aside {
     width: 100%;
     margin: 0 auto 1.5rem; 
-    background: var(--line); /* Pearl Beige background for aside */
+    background: var(--line); 
     border: 1px solid color-mix(in srgb, var(--line) 80%, black);
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
@@ -564,7 +544,7 @@ form label {
     color: var(--charcoal);
 }
 .site-aside li:before { 
-    content: '❖'; /* Diamond icon */
+    content: '❖';
     position: absolute; 
     left: 0; 
     color: var(--primary); 
@@ -654,7 +634,7 @@ form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-} /* Mobile default */
+}
 .form-group {
     display: grid;
     gap: .3rem;
@@ -667,12 +647,11 @@ legend {
 }
 .required {
     color: #dc2626;
-} /* Red color for required fields */
+} 
 textarea {
     resize: vertical;
 }
 
-/* Checkboxes and Radios */
 .radio-group {
     display: grid;
     gap: .5rem;
@@ -698,7 +677,6 @@ textarea {
     flex-wrap: wrap;
     margin-top: 1rem;
 }
-/* Unified Primary Button Style for ALL forms/CTAs */
 button:not(.reset-btn), .cta-button, .submit-btn {
     padding: 1rem 1.5rem; 
     border-radius: var(--radius-sm); 
@@ -712,7 +690,6 @@ button:not(.reset-btn), .cta-button, .submit-btn {
     text-align: center;
     text-decoration: none !important;
     display: block;
-    /* FIX: Remove width: 100% so it fits content size (for CONTACT.HTML Send button) */
     width: auto;
 }
 button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
@@ -720,13 +697,11 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* FIX: Override the width: auto to width: 100% specifically for the quick search button */
 .quick-search button {
     align-self: end;
     width: 100%; 
 }
 
-/* Reset button styling */
 .reset-btn {
     background: var(--line);
     color: var(--charcoal);
@@ -736,7 +711,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     border: 1px solid var(--line-dark);
     box-shadow: var(--shadow-sm);
     cursor: pointer;
-    /* FIX: Allow reset button to fit content size in CONTACT.HTML */
     width: auto; 
 }
 .reset-btn:hover {
@@ -744,7 +718,7 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 }
 .success-message {
     padding: 1rem;
-    background: #e0f2f1; /* Light cyan for success */
+    background: #e0f2f1; 
     border: 1px solid #0d9488;
     color: var(--charcoal);
     border-radius: var(--radius-sm);
@@ -755,29 +729,24 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 /* =========================
    10) Neighborhood Cards (NEIGHBORHOODS.HTML)
    ========================= */
-
-/* הגריד שעוטף את הכרטיסים של השכונות */
 .neighborhood-grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* מובייל – עמודה אחת */
+    grid-template-columns: 1fr; 
     gap: 2rem;
     margin-top: 1.5rem;
 }
 
-/* כרטיס שכונה – משתמש בבסיס של .card ומוסיף התאמות קטנות */
 .card--neighborhood h3 {
     margin: .5rem 0 .25rem;
     font-size: var(--fs-600);
 }
 
-/* טקסט פתיחה */
 .card--neighborhood > p {
     margin: 0;
     font-size: var(--fs-400);
     color: var(--muted);
 }
 
-/* רשימת מאפיינים של השכונה */
 .card--neighborhood ul {
     list-style: none;
     padding: 0;
@@ -792,7 +761,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     margin-bottom: .35rem;
 }
 
-/* בוליט זהב כמו בכרטיסי הדירות */
 .card--neighborhood ul li::before {
     content: '▪';
     position: absolute;
@@ -801,7 +769,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     font-size: 1.1em;
 }
 
-/* הדגשה בזהב במאפיין */
 .card--neighborhood ul li strong {
     color: var(--primary);
 }
@@ -810,43 +777,30 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 /* =========================
    11) Media Queries (Responsive Design)
    ========================= */
-/* Tablet and wider (700px) */
 @media (min-width: 700px) {
-    /* Forms: Two columns */
     .form-row {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    /* FILTER FORM - 3 columns for all fields + button */
     .filter-form {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.25rem;
-        /* Re-aligning items to bottom for aesthetic consistency across all devices */
         align-items: end;
     }
-    /* FIX: Ensure the button takes its own column, aligns to the bottom, and is primary gold */
     .filter-form button {
         grid-column: span 1;
         align-self: end;
-        /* Width is auto by default, but we stretch it to fill the grid column */
         width: 100%;
     }
-    /* FIX: Filter fields should take up one column each */
     .filter-form .field {
         grid-column: span 1;
     }
-    
-    
-    /* Featured Listings: 2 columns */
     .cards {
         grid-template-columns: repeat(2, minmax(0,1fr));
     }
-    /* Neighborhoods: 2 columns */
     .neighborhood-grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    /* Sidebar Layout Override (KEEP single column for the main sections on tablet) */
     .with-aside {
         grid-template-columns: 1fr;
     }
@@ -855,41 +809,40 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     }
 }
 
-/* Desktop and wider (980px) */
 @media (min-width: 980px) {
-    /* Featured Listings: 3 columns */
+    
     .cards {
         grid-template-columns: repeat(3, minmax(0,1fr));
     }
-    /* Neighborhoods: 3 columns */
+   
     .neighborhood-grid-container {
         grid-template-columns: repeat(3, 1fr);
     }
-    /* Quick search button fits content width */
+    
     .quick-search button {
         justify-self: start;
     }
-    /* Footer nav should align left/center */
+    
     .site-footer nav {
         justify-content: space-between;
     }
-    /* Layout: Re-enable sidebar for pages that need it (e.g., LISTINGS) */
+    
     .layout {
         display: grid;
-        grid-template-columns: 3fr 1.2fr; /* Content + Sidebar */
+        grid-template-columns: 3fr 1.2fr;
         gap: 2rem;
     }
-    /* For the index page which has main and aside as siblings, we ensure they flow in a block */
+    
     .with-aside { 
         display: block; 
     }
-    /* Ensure the main sections stretch full width within the container */
+    
     .hero, .featured-listings {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
-    /* Position the Aside *after* the main content sections if it's placed after <main> but *before* <footer> */
+
     .site-aside { 
         width: min(1200px, 92vw);
         margin: 2rem auto 1.5rem; 
@@ -900,7 +853,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     }
 }
 
-/* Fixed — clean full row layout for large screens */
 @media (min-width: 1200px) {
     .quick-search {
         grid-template-columns: auto auto auto auto auto;
@@ -921,8 +873,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 /* =========================
    12) Thank You Page Animation
    ========================= */
-
-/* Keyframes for the 'sent' animation (Slower & Higher) */
 @keyframes flyOut {
     0% {
         transform: translateY(0) scale(1) rotate(0deg);
@@ -934,23 +884,20 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     }
 }
 
-/* Wrapper to position the animation */
 .animation-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* Space for the icon above the text */
+    height: 100px; 
     margin-top: 2rem;
-    margin-bottom: 0.25rem; /* DECREASED margin-bottom to bring closer to text */
+    margin-bottom: 0.25rem; 
 }
 
-/* Styling and triggering the animation */
 .envelope-icon {
-    font-size: 15rem; /* INCREASED SIZE */
+    font-size: 15rem;
     line-height: 1;
-    color: var(--primary); /* Use primary color for the icon */
-    /* Start the animation immediately upon load */
-    animation: flyOut 4s ease-in-out forwards; /* INCREASED DURATION */
+    color: var(--primary);
+    animation: flyOut 4s ease-in-out forwards; 
 }
 
 
@@ -958,12 +905,10 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
    13) About page styling
    ========================= */
 
-/* מרווח כללי לעמוד אודות */
 .about-page main {
     padding-block: 2rem 3rem;
 }
 
-/* כרטיס בסיס לכל קטע בעמוד אודות */
 .about-section {
     background: var(--card-bg);
     border: 1px solid var(--line);
@@ -978,13 +923,11 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     margin-top: 0;
 }
 
-/* פסקאות ב-about – טיפה יותר גדולות וקריאות */
 .about-section p {
     font-size: var(--fs-400);
     color: var(--charcoal);
 }
 
-/* רשימות שירותים / למה אנחנו – בלי bullets רגילים, עם “בולט זהב” */
 .services ul,
 .why-us ul {
     list-style: none;
@@ -1017,12 +960,10 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--primary);
 }
 
-/* Highlight לסיכום – מעט רקע שונה */
 .about-highlight {
     background: color-mix(in srgb, var(--card-bg) 80%, var(--primary) 20%);
 }
 
-/* CTA בעמוד אודות – ממורכז */
 .about-cta {
     text-align: center;
     background: transparent;
@@ -1031,7 +972,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     margin-top: 2rem;
 }
 
-/* סטטוס/מספרים – שורה של “בולטים חזקים” */
 .about-stats h3 {
     margin-bottom: 1rem;
 }
@@ -1062,7 +1002,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--muted);
 }
 
-/* תנאי שימוש + פרטיות – טיפה יותר “יבש” וקטן */
 .about-legal h2 {
     font-size: var(--fs-600);
 }
@@ -1078,7 +1017,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--muted);
 }
 
-/* במסכים רחבים – stats בשורה במקום בעמודה */
 @media (min-width: 700px) {
     .stats-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1110,8 +1048,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 /* =========================
    15) Apartment detail pages
    ========================= */
-
-/* Breadcrumbs (Home › Listings › …) */
 .breadcrumbs {
     width: min(1200px, 92vw);
     margin: 1rem auto 0;
@@ -1125,7 +1061,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--primary);
 }
 
-/* Layout: article + aside (similar listings) */
 .layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -1133,7 +1068,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     align-items: flex-start;
 }
 
-/* גלריה – כרטיסים יפים ואחידים לתמונות */
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1166,12 +1100,10 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--muted);
 }
 
-/* טבלת פרטי הדירה – כבר יש table כללי, רק מיישרים קצת */
 #specs table {
     margin-top: 1rem;
 }
 
-/* וידאו, מפה, PDF – הכל באותו סגנון, רספונסיבי */
 .layout video,
 .layout iframe,
 .layout embed {
@@ -1184,7 +1116,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     margin-top: 1rem;
 }
 
-/* טופס "Request a visit" – משתמש בבסיס form, עם התאמה קלה */
 .visit-form {
     margin-top: 1rem;
 }
@@ -1193,7 +1124,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     gap: .35rem;
 }
 
-/* Aside של "Similar listings" – שיהיה כמו כרטיס */
 .similar {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -1218,7 +1148,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     color: var(--primary);
 }
 
-/* קישור חזרה ל-listings */
 .back-link {
     margin-top: 2rem;
 }
