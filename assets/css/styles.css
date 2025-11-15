@@ -327,6 +327,7 @@ form textarea {
     color: var(--charcoal);
     /* NEW: BOLD FONT for fields in filter forms (Listings) */
     font-weight: 600; 
+    width: 100%;
 }
 /* Unified Label Styling for all forms */
 .filter-form label,
@@ -456,6 +457,21 @@ form label {
     color: var(--primary); 
     font-size: 1.2em;
 } 
+
+.cards-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto !important;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cards-scroll .card {
+    width: 360px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
 
 .more-link { 
     font-weight: 700; 
@@ -739,47 +755,57 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 /* =========================
    10) Neighborhood Cards (NEIGHBORHOODS.HTML)
    ========================= */
+
+/* הגריד שעוטף את הכרטיסים של השכונות */
 .neighborhood-grid-container {
-    display: grid; 
-    grid-template-columns: 1fr; /* Mobile default */
+    display: grid;
+    grid-template-columns: 1fr; /* מובייל – עמודה אחת */
     gap: 2rem;
     margin-top: 1.5rem;
 }
-.neighborhood-card {
-    background: var(--card-bg); 
-    border: 1px solid var(--line); 
-    border-radius: var(--radius); 
-    box-shadow: var(--shadow-md);
-    padding: 1.5rem; 
-    display: grid; 
-    gap: .75rem;
-}
-.neighborhood-card figure {
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-}
-.neighborhood-card img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-.neighborhood-card h4 {
-    margin-bottom: 0.5rem;
+
+/* כרטיס שכונה – משתמש בבסיס של .card ומוסיף התאמות קטנות */
+.card--neighborhood h3 {
+    margin: .5rem 0 .25rem;
     font-size: var(--fs-600);
 }
-.neighborhood-card ul { 
-    list-style: none; 
-    padding: 0; 
-    margin-top: 0.5rem;
+
+/* טקסט פתיחה */
+.card--neighborhood > p {
+    margin: 0;
+    font-size: var(--fs-400);
+    color: var(--muted);
 }
-.neighborhood-card ul li { 
-    font-size: var(--fs-400); 
-    position: relative; 
+
+/* רשימת מאפיינים של השכונה */
+.card--neighborhood ul {
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0 0;
+}
+
+.card--neighborhood ul li {
+    font-size: var(--fs-400);
+    position: relative;
     padding-left: 1.5rem;
     color: var(--charcoal);
+    margin-bottom: .35rem;
 }
-.neighborhood-card ul li strong {
+
+/* בוליט זהב כמו בכרטיסי הדירות */
+.card--neighborhood ul li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 1.1em;
+}
+
+/* הדגשה בזהב במאפיין */
+.card--neighborhood ul li strong {
     color: var(--primary);
 }
+
 
 /* =========================
    11) Media Queries (Responsive Design)
@@ -811,23 +837,6 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
         grid-column: span 1;
     }
     
-    /* Quick search: 5 columns in a single row */
-    .quick-search {
-        grid-template-columns: repeat(5, 1fr);
-        align-items: end; /* Align items to the bottom */
-    }
-    .quick-search h2 {
-        grid-column: 1/-1; /* Header spans all 5 columns */
-    }
-    .quick-search .field, .quick-search button {
-        /* Each field and the button take exactly one column */
-        grid-column: span 1;
-    }
-    /* Ensure the button is properly placed on the fifth column */
-    .quick-search button {
-        /* Override mobile full-width stretch to fit into one column */
-        justify-self: stretch;
-    }
     
     /* Featured Listings: 2 columns */
     .cards {
@@ -891,6 +900,24 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     }
 }
 
+/* Fixed — clean full row layout for large screens */
+@media (min-width: 1200px) {
+    .quick-search {
+        grid-template-columns: auto auto auto auto auto;
+        gap: 1.25rem;
+        align-items: end;
+    }
+
+    .quick-search h2 {
+        grid-column: 1 / -1;
+    }
+
+    .quick-search button {
+        width: auto;
+    }
+}
+
+
 /* =========================
    12) Thank You Page Animation
    ========================= */
@@ -945,4 +972,128 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
         box-shadow: none;
         border-color: #000;
     }
+}
+
+/* =========================
+   14) Apartment detail pages
+   ========================= */
+
+/* Breadcrumbs (Home › Listings › …) */
+.breadcrumbs {
+    width: min(1200px, 92vw);
+    margin: 1rem auto 0;
+    font-size: var(--fs-300);
+    color: var(--muted);
+}
+.breadcrumbs a {
+    color: var(--muted);
+}
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+/* Layout: article + aside (similar listings) */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* גלריה – כרטיסים יפים ואחידים לתמונות */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.gallery-grid figure {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin: 0;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.gallery-grid figure:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+.gallery-grid figcaption {
+    padding: .5rem .75rem .75rem;
+    font-size: var(--fs-300);
+    color: var(--muted);
+}
+
+/* טבלת פרטי הדירה – כבר יש table כללי, רק מיישרים קצת */
+#specs table {
+    margin-top: 1rem;
+}
+
+/* וידאו, מפה, PDF – הכל באותו סגנון, רספונסיבי */
+.layout video,
+.layout iframe,
+.layout embed {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    display: block;
+    margin-top: 1rem;
+}
+
+/* טופס "Request a visit" – משתמש בבסיס form, עם התאמה קלה */
+.visit-form {
+    margin-top: 1rem;
+}
+.visit-form .field {
+    display: grid;
+    gap: .35rem;
+}
+
+/* Aside של "Similar listings" – שיהיה כמו כרטיס */
+.similar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+}
+.similar h2 {
+    margin-top: 0;
+    font-size: var(--fs-600);
+}
+.similar ul {
+    list-style: none;
+    padding: 0;
+    margin: .75rem 0 0;
+}
+.similar li {
+    margin-bottom: .5rem;
+    font-size: var(--fs-400);
+}
+.similar a:hover {
+    color: var(--primary);
+}
+
+/* קישור חזרה ל-listings */
+.back-link {
+    margin-top: 2rem;
+}
+.back-link a {
+    font-size: var(--fs-400);
+    color: var(--primary);
+    font-weight: 600;
+}
+.back-link a:hover {
+    color: color-mix(in srgb, var(--primary) 80%, black);
 }
