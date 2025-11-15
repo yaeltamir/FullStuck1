@@ -186,10 +186,10 @@ section {
 
 .hero-with-bg {
     min-height: 550px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
+    margin-left: 0;
     padding: 3rem 1rem 1rem 1rem;
-    background-image: url("/assets/img/i2.html.jpg");
+    background-image: url("/assets/img/i2html.jpg");
     background-size: cover;
     background-position: center 30%;
     background-attachment: scroll;
