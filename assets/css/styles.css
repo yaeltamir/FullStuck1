@@ -1070,7 +1070,7 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-top: 1rem;
 }
