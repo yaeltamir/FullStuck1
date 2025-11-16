@@ -443,15 +443,16 @@ form label {
 .cards-scroll {
     display: flex;
     gap: 1.5rem;
-    overflow-x: auto !important;
-    padding-bottom: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0 1.5rem;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
 
 .cards-scroll .card {
-    width: 360px;
-    flex: 0 0 auto;
+    flex: 0 0 80vw;      
+    max-width: 360px;   
     scroll-snap-align: start;
 }
 
@@ -806,6 +807,12 @@ button:not(.reset-btn):hover, .cta-button:hover, .submit-btn:hover {
     }
     .layout {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .cards-scroll .card {
+        flex: 0 0 360px;
     }
 }
 
